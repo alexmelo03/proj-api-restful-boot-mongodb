@@ -2,10 +2,15 @@ package com.devalex.mongo.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="user")   //podendo deixar sem o collection, que o sprindata mapeia a colecao com o mesmo nome da clase, so que em letra minuscula
 public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
 	private String id;
 	private String name;
 	private String email;
